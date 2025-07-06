@@ -1,9 +1,9 @@
 from telegram.ext import Updater, MessageHandler, Filters
 import os
 
-TOKEN = os.environ['7542836224:AAFa68zmbXLnfDaTKdJ8DoiFZbO1-jWEvmk']
-GROUP_A_ID = int(os.environ['-4621356734'])
-GROUP_B_ID = int(os.environ['-4957496536'])
+TOKEN = '7542836224:AAFa68zmbXLnfDaTKdJ8DoiFZbO1-jWEvmk'
+GROUP_A_ID = '-4621356734'
+GROUP_B_ID = '-4957496536'
 
 def forward_message(update, context):
     from_chat_id = update.effective_chat.id
