@@ -23,7 +23,7 @@ import os
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, ContextTypes, filters
 
-TOKEN = '7542836224:AAFa68zmbXLnfDaTKdJ8DoiFZbO1-jWEvmk'
+BOT_TOKEN = '7542836224:AAFa68zmbXLnfDaTKdJ8DoiFZbO1-jWEvmk'
 GROUP_A_ID = '-4621356734'
 GROUP_B_ID = '-4957496536'
 async def forward_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
