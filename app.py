@@ -41,9 +41,32 @@
 
 
 
+# import os
+# from telegram import Update
+# from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, filters
+
+
+
+# async def forward_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     from_chat_id = update.effective_chat.id
+#     message = update.effective_message
+
+#     if from_chat_id == GROUP_A_ID:
+#         await context.bot.send_message(chat_id=GROUP_B_ID, text=message.text)
+#     elif from_chat_id == GROUP_B_ID:
+#         await context.bot.send_message(chat_id=GROUP_A_ID, text=message.text)
+
+# if __name__ == '__main__':
+#     app = ApplicationBuilder().token(BOT_TOKEN).build()
+#     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, forward_message))
+#     print("🚀 Bot is running...")
+#     app.run_polling()
+
+
+
 import os
 from telegram import Update
-from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, filters
+from telegram.ext import ApplicationBuilder, MessageHandler, ContextTypes, filters
 
 BOT_TOKEN = '7542836224:AAFa68zmbXLnfDaTKdJ8DoiFZbO1-jWEvmk'
 GROUP_A_ID = '-4621356734'
@@ -58,8 +81,9 @@ async def forward_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif from_chat_id == GROUP_B_ID:
         await context.bot.send_message(chat_id=GROUP_A_ID, text=message.text)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app = ApplicationBuilder().token(BOT_TOKEN).build()
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, forward_message))
     print("🚀 Bot is running...")
     app.run_polling()
+
