@@ -19,25 +19,25 @@
 # updater.idle()
 
 
-import os
-from telegram import Update
-from telegram.ext import ApplicationBuilder, MessageHandler, ContextTypes, filters
+# import os
+# from telegram import Update
+# from telegram.ext import ApplicationBuilder, MessageHandler, ContextTypes, filters
 
 
-async def forward_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    from_chat_id = update.effective_chat.id
-    message = update.effective_message
+# async def forward_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     from_chat_id = update.effective_chat.id
+#     message = update.effective_message
 
-    if from_chat_id == GROUP_A_ID:
-        await context.bot.send_message(chat_id=GROUP_B_ID, text=message.text)
-    elif from_chat_id == GROUP_B_ID:
-        await context.bot.send_message(chat_id=GROUP_A_ID, text=message.text)
+#     if from_chat_id == GROUP_A_ID:
+#         await context.bot.send_message(chat_id=GROUP_B_ID, text=message.text)
+#     elif from_chat_id == GROUP_B_ID:
+#         await context.bot.send_message(chat_id=GROUP_A_ID, text=message.text)
 
-app = ApplicationBuilder().token(BOT_TOKEN).build()
-app.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), forward_message))
+# app = ApplicationBuilder().token(BOT_TOKEN).build()
+# app.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), forward_message))
 
-print("🚀 Bot is running...")
-app.run_polling()
+# print("🚀 Bot is running...")
+# app.run_polling()
 
 
 
